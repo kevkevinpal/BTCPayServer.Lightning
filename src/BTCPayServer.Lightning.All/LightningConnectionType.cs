@@ -14,4 +14,5 @@ public static class LightningConnectionType
     public const string Eclair = "eclair";
     public const string LNbank = "lnbank";
     public const string LNDhub = "lndhub";
+    public const string Blink = "blink";
 }
