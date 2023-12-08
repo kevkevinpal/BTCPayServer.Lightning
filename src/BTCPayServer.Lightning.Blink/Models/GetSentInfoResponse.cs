@@ -1,9 +1,9 @@
 using System;
-using BTCPayServer.Lightning.Eclair.JsonConverters;
+using BTCPayServer.Lightning.Blink.JsonConverters;
 using BTCPayServer.Lightning.JsonConverters;
 using Newtonsoft.Json;
 
-namespace BTCPayServer.Lightning.Eclair.Models
+namespace BTCPayServer.Lightning.Blink.Models
 {
     public class GetSentInfoResponse
     {
@@ -14,7 +14,7 @@ namespace BTCPayServer.Lightning.Eclair.Models
         public string PaymentType { get; set; }
         public string RecipientNodeId { get; set; }
         public long AmountMsat { get; set; }
-        [JsonConverter(typeof(EclairDateTimeJsonConverter))]
+        [JsonConverter(typeof(BlinkDateTimeJsonConverter))]
         public DateTimeOffset CreatedAt { get; set; }
 
         [JsonConverter(typeof(LightMoneyJsonConverter))]

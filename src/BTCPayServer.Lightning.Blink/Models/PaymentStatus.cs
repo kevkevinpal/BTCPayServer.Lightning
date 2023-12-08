@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using BTCPayServer.Lightning.Eclair.JsonConverters;
+using BTCPayServer.Lightning.Blink.JsonConverters;
 using BTCPayServer.Lightning.JsonConverters;
 using Newtonsoft.Json;
 
-namespace BTCPayServer.Lightning.Eclair.Models
+namespace BTCPayServer.Lightning.Blink.Models
 {
     public class PaymentStatus
     {
@@ -14,7 +14,7 @@ namespace BTCPayServer.Lightning.Eclair.Models
         [JsonConverter(typeof(LightMoneyJsonConverter))]
         public LightMoney FeesPaid { get; set; }
         
-        [JsonConverter(typeof(EclairDateTimeJsonConverter))]
+        [JsonConverter(typeof(BlinkDateTimeJsonConverter))]
         public DateTimeOffset CompletedAt { get; set; }
         
         public List<PaymentRoutes> Route { get; set; }

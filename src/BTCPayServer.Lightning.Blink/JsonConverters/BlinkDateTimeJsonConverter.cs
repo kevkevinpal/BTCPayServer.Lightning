@@ -6,9 +6,9 @@ using NBitcoin;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace BTCPayServer.Lightning.Eclair.JsonConverters
+namespace BTCPayServer.Lightning.Blink.JsonConverters
 {
-    public class EclairDateTimeJsonConverter : JsonConverter
+    public class BlinkDateTimeJsonConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {

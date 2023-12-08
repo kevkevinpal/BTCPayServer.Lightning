@@ -2,14 +2,14 @@
   <Import Project="../Build/Common.csproj"></Import>
   <PropertyGroup>
     <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
-    <Version>1.5.2</Version>
+    <Version>1.5.7</Version>
     <LangVersion>10</LangVersion>
-    <PackageId>BTCPayServer.Lightning.Eclair</PackageId>
-    <Description>Client library for Eclair to build Lightning Network Apps in C#.</Description>
+    <PackageId>BTCPayServer.Lightning.Blink</PackageId>
+    <Description>Client library for Blink to build Lightning Network Apps in C#.</Description>
     <PackageProjectUrl>https://github.com/btcpayserver/BTCPayServer.Lightning</PackageProjectUrl>
     <RepositoryUrl>https://github.com/btcpayserver/BTCPayServer.Lightning</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>lightning;bitcoin;eclair;lapps</PackageTags>
+    <PackageTags>lightning;bitcoin;blink;lapps</PackageTags>
   </PropertyGroup>
 
     <ItemGroup>

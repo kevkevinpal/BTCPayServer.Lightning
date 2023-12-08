@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
 		<RootNamespace>BTCPayServer.Lightning</RootNamespace>
-		<Version>1.5.2</Version>
+		<Version>1.5.7</Version>
 		<LangVersion>10</LangVersion>
 		<PackageId>BTCPayServer.Lightning.All</PackageId>
 		<Description>Client library for lightning network implementations to build Lightning Network Apps in C#.</Description>
@@ -20,6 +20,7 @@
 		<ProjectReference Include="..\BTCPayServer.Lightning.LNbank\BTCPayServer.Lightning.LNbank.csproj" />
 		<ProjectReference Include="..\BTCPayServer.Lightning.LNDhub\BTCPayServer.Lightning.LNDhub.csproj" />
 		<ProjectReference Include="..\BTCPayServer.Lightning.LND\BTCPayServer.Lightning.LND.csproj" />
+		<ProjectReference Include="..\BTCPayServer.Lightning.Blink\BTCPayServer.Lightning.Blink.csproj" />
 	</ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0"></PackageReference>

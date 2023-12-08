@@ -29,3 +29,7 @@ cd ..
 cd BTCPayServer.Lightning.All
 .\PushNuget.ps1
 cd ..
+
+cd BTCPayServer.Lightning.Blink
+.\PushNuget.ps1
+cd ..

@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using BTCPayServer.Lightning.Eclair.JsonConverters;
+using BTCPayServer.Lightning.Blink.JsonConverters;
 using NBitcoin;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace BTCPayServer.Lightning.Eclair.Models
+namespace BTCPayServer.Lightning.Blink.Models
 {
     public partial class ChannelResponse
     {

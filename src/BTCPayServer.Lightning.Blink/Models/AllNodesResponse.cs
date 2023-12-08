@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace BTCPayServer.Lightning.Eclair.Models
+namespace BTCPayServer.Lightning.Blink.Models
 {
     public partial class AllNodesResponse
     {

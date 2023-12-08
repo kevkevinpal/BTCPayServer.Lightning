@@ -7,6 +7,7 @@ using BTCPayServer.Lightning.Eclair;
 using BTCPayServer.Lightning.LNbank;
 using BTCPayServer.Lightning.LND;
 using BTCPayServer.Lightning.LNDhub;
+using BTCPayServer.Lightning.Blink;
 using NBitcoin;
 
 namespace BTCPayServer.Lightning;
@@ -18,7 +19,8 @@ public class LightningClientFactory : ILightningClientFactory
         {
             new ChargeLightningConnectionStringHandler(), new CLightningConnectionStringHandler(),
             new EclairConnectionStringHandler(), new LndConnectionStringHandler(),
-            new LndHubConnectionStringHandler(), new LNbankConnectionStringHandler()
+            new LndHubConnectionStringHandler(), new LNbankConnectionStringHandler(),
+						new BlinkConnectionStringHandler()
         };
 
     private readonly Network _network;
@@ -65,7 +67,7 @@ public class LightningClientFactory : ILightningClientFactory
             throw lastError;
 
         throw new NotSupportedException(
-            $"Unsupported connection string");
+            $"Unsupported connection for you buddy 1.5.7");
     }
 
     public bool TryCreate(string connectionString, out ILightningClient client, out string error)

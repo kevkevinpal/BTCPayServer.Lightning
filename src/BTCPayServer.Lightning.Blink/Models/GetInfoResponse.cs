@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace BTCPayServer.Lightning.Eclair.Models;
+namespace BTCPayServer.Lightning.Blink.Models;
 
 public class GetInfoResponse
 {

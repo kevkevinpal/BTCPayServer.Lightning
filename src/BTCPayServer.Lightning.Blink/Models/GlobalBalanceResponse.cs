@@ -1,9 +1,9 @@
-using BTCPayServer.Lightning.Eclair.JsonConverters;
+using BTCPayServer.Lightning.Blink.JsonConverters;
 using BTCPayServer.Lightning.JsonConverters;
 using NBitcoin;
 using Newtonsoft.Json;
 
-namespace BTCPayServer.Lightning.Eclair.Models
+namespace BTCPayServer.Lightning.Blink.Models
 {
     public class GlobalBalanceResponse
     {
@@ -29,51 +29,51 @@ namespace BTCPayServer.Lightning.Eclair.Models
     public class GlobalOffchainBalance
     {
         [JsonProperty("waitForFundingConfirmed")]
-        [JsonConverter(typeof(EclairBtcJsonConverter))]
+        [JsonConverter(typeof(BlinkBtcJsonConverter))]
         public LightMoney WaitForFundingConfirmed { get; set; }
         
         [JsonProperty("waitForChannelReady")]
-        [JsonConverter(typeof(EclairBtcJsonConverter))]
+        [JsonConverter(typeof(BlinkBtcJsonConverter))]
         public LightMoney WaitForChannelReady { get; set; }
         
         [JsonProperty("waitForPublishFutureCommitment")]
-        [JsonConverter(typeof(EclairBtcJsonConverter))]
+        [JsonConverter(typeof(BlinkBtcJsonConverter))]
         public LightMoney WaitForPublishFutureCommitment { get; set; }
         
         [JsonProperty("negotiating")]
-        [JsonConverter(typeof(EclairBtcJsonConverter))]
+        [JsonConverter(typeof(BlinkBtcJsonConverter))]
         public LightMoney Negotiating { get; set; }
         
         [JsonProperty("normal")]
-        public EclairChannelBalance Normal { get; set; }
+        public BlinkChannelBalance Normal { get; set; }
         
         [JsonProperty("shutdown")]
-        public EclairChannelBalance Shutdown { get; set; }
+        public BlinkChannelBalance Shutdown { get; set; }
         
         [JsonProperty("closing")]
-        public EclairClosingBalances Closing { get; set; }
+        public BlinkClosingBalances Closing { get; set; }
     }
 
-    public class EclairClosingBalances
+    public class BlinkClosingBalances
     {
         
         [JsonProperty("localCloseBalance")]
-        public EclairChannelBalance LocalCloseBalance { get; set; }
+        public BlinkChannelBalance LocalCloseBalance { get; set; }
         
         [JsonProperty("remoteCloseBalance")]
-        public EclairChannelBalance RemoteCloseBalance { get; set; }
+        public BlinkChannelBalance RemoteCloseBalance { get; set; }
         
         [JsonProperty("mutualCloseBalance")]
-        public EclairChannelBalance MutualCloseBalance { get; set; }
+        public BlinkChannelBalance MutualCloseBalance { get; set; }
         
         [JsonProperty("unknownCloseBalance")]
-        public EclairChannelBalance UnknownCloseBalance { get; set; }
+        public BlinkChannelBalance UnknownCloseBalance { get; set; }
     }
 
-    public class EclairChannelBalance
+    public class BlinkChannelBalance
     {
         [JsonProperty("toLocal")]
-        [JsonConverter(typeof(EclairBtcJsonConverter))]
+        [JsonConverter(typeof(BlinkBtcJsonConverter))]
         public LightMoney ToLocal { get; set; }
     }
 }

@@ -8,9 +8,9 @@ using NBitcoin.JsonConverters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace BTCPayServer.Lightning.Eclair.JsonConverters
+namespace BTCPayServer.Lightning.Blink.JsonConverters
 {
-    public class EclairBtcJsonConverter : JsonConverter
+    public class BlinkBtcJsonConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {
@@ -28,12 +28,12 @@ namespace BTCPayServer.Lightning.Eclair.JsonConverters
                     JsonToken.Integer => _longType.IsAssignableFrom(reader.ValueType)
                         ? new LightMoney((long)reader.Value, LightMoneyUnit.BTC)
                         : new LightMoney(long.MaxValue, LightMoneyUnit.BTC),
-                    // Eclair denominates global balance amounts in BTC, see https://acinq.github.io/eclair/#globalbalance
+                    // Blink denominates global balance amounts in BTC, see https://acinq.github.io/blink/#globalbalance
                     JsonToken.Float => new LightMoney(Convert.ToDecimal(reader.Value), LightMoneyUnit.BTC),
                     JsonToken.String =>
                         // some of the c-lightning values have a trailing "msat" that we need to remove before parsing
                         new LightMoney(long.Parse(((string)reader.Value).Replace("msat", ""), CultureInfo.InvariantCulture), LightMoneyUnit.BTC),
-                    // Fix for Eclair having empty objects for zero amount cases, see https://acinq.github.io/eclair/#globalbalance
+                    // Fix for Blink having empty objects for zero amount cases, see https://acinq.github.io/blink/#globalbalance
                     JsonToken.StartObject => JObject.Load(reader) != null ? LightMoney.Zero : null,
                     _ => null
                 };
